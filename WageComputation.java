@@ -1,34 +1,41 @@
 package com.bridgelabz.empwage;
 
 public class WageComputation {
+	public static final int IS_PART_TIME = 1;
+	public static final int IS_FULL_TIME = 2;
+	public static final int EMP_RATE_PER_HOUR = 20;
 	public static void main(String[] args) {
+		
 		System.out.println("Welcome to Employee Wage Computation Program");
-		// constants
-		int IS_FULL_TIME = 1;
-		int IS_PART_TIME = 1;
-		int IS_FULL_TIME_ = 2 ;
-		int EMP_RATE_PER_HOUR = 20;
-		//variables
 		int empHrs = 0;
-		int empWage = 0;
-		// computation
-		double empcheck = Math.floor(Math.random() * 10) % 2;
-		double empCheck = Math.floor(Math.random() * 10) % 3;
-		System.out.println(empCheck);
+		 int empWage = 0;
+		 int empCheck = (int)Math.floor(Math.random() * 10) % 3;
 		
-		if(empcheck == IS_FULL_TIME) {
-			
-			if (empCheck == IS_PART_TIME)
-				empHrs = 4;
+		    System.out.println(empCheck);
+		
+		switch (empCheck) {
+		case IS_PART_TIME:
+		
+            System.out.println(empWage);
+			empHrs = 4;
+			break;
+		
+		case IS_FULL_TIME:		
+			System.out.println(empWage);
+		    empHrs = 8;
+		    break;
+		default :
+		
+			System.out.println(empWage);
+			empHrs = 0;
+		    break;
 		}
-			else if (empCheck == IS_FULL_TIME_)
-			{
-				empHrs = 8;
-			}
-		
-			else
-				empHrs = 0;
 		empWage = empHrs * EMP_RATE_PER_HOUR;
-		System.out.println("Emp Wage: " +empWage);
-}
-}
+		System.out.println("Emp Wage:" + empWage);		
+		}
+	}
+
+	
+		
+	
+
